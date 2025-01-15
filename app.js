@@ -3,18 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsDiv = document.getElementById('results');
     const meetingInput = document.getElementById('meeting-input');
 
-
     button.addEventListener('click', function() {
         const meetingDetails = meetingInput.value;
 
         resultsDiv.innerHTML = '<p>Processing your meeting details...</p>'; // Temporary message
+
         fetch('/api/analyze', {
             method: 'POST',
-           headers: {
-               'Content-Type': 'application/json'
-           },
-           body: JSON.stringify({ meeting_details: meetingDetails })
-       })
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ meeting_details: meetingDetails })
         })
         .then(response => response.json())
         .then(data => {
