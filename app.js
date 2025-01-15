@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const meetingDetails = meetingInput.value;
 
         resultsDiv.innerHTML = '<p>Processing your meeting details...</p>'; // Temporary message
-        fetch('/api/analyze', {  // Correct: No single quotes around /api/analyze
+
+        fetch('/api/analyze', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 data.research_links.forEach(link => resultsDiv.innerHTML += `<li><a href="${link}" target="_blank">${link}</a></li>`);
                 resultsDiv.innerHTML += '</ul>';
             }
-
 
             // Add similar blocks for other results...
 
