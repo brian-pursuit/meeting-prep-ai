@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const meetingDetails = meetingInput.value;
 
         resultsDiv.innerHTML = '<p>Processing your meeting details...</p>'; // Temporary message
-
-        fetch('/api/analyze', {  // Send POST request to Flask backend
+        fetch('/api/analyze', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ meeting_details: meetingDetails })
+           headers: {
+               'Content-Type': 'application/json'
+           },
+           body: JSON.stringify({ meeting_details: meetingDetails })
+       })
         })
         .then(response => response.json())
         .then(data => {
