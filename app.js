@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         resultsDiv.innerHTML = '<p>Processing your meeting details...</p>'; // Temporary message
 
-        fetch('/api/analyze', {
+        fetch('/api/analyze', { // No quotes around /api/analyze
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
